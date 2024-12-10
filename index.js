@@ -13,6 +13,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(express.static('public'))
 
+import { Contact } from './models/Contact.js'
+
 import { router as contactsRoutes } from './routes/contactsRoutes.js'
 import { ContactsController } from './controllers/ContactsController.js'
 

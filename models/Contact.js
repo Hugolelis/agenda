@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize as db } from "../db/conn";
+import { sequelize as db } from "../db/conn.js";
 
 export const Contact = db.define('Contact', {
     name: {
