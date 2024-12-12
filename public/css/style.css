@@ -1,0 +1,20 @@
+:root {
+    --black-010: #161618;
+    
+    --gray-010: rgb(48, 48, 48);
+
+    --white-010: white;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", serif;
+    font-weight: 100;
+    font-style: normal;
+    background-color: var(--black-010);
+}
