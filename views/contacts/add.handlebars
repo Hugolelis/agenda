@@ -1,1 +1,26 @@
-<h1>ADD</h1>
+<div class="container d-flex justify-content-center align-items-center flex-column p-4">
+
+    <div class="add-header col-12 col-md-10 col-lg-8">
+        <h1>Adicionar contato</h1>
+        <a href="/contacts">Voltar</a>
+    </div>
+
+    <form action="/contacts/add" method="post" class="form col-12 col-md-10 col-lg-8">
+        <div class="mb-2 mt-3">
+            <label for="name" class="form-label">Nome:</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Digite o nome...">
+        </div>
+
+        <div class="mb-2">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Digite o email...">
+        </div>
+
+        <div class="mb-2">
+            <label for="number" class="form-label">Telefone:</label>
+            <input type="number" class="form-control" name="number" id="number" placeholder="Digite o telefone...">
+        </div>
+
+        <input type="submit" value="Adicionar" class="btn btn-success mt-3 col-12">
+    </form>
+</div>

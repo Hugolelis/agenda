@@ -1,7 +1,7 @@
 :root {
     --black-010: #161618;
-    
-    --gray-010: rgb(48, 48, 48);
+
+    --green-010: #198754;
 
     --white-010: white;
 }
@@ -17,4 +17,46 @@ body {
     font-weight: 100;
     font-style: normal;
     background-color: var(--black-010);
+}
+
+a {
+    color: var(--white-010);
+}
+
+h1 {
+    color: var(--green-010);
+}
+
+.container {
+    height: 100vh;
+}
+
+/* CONTACT */
+.contact {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 4em;
+
+    color: white;
+    font-weight: bold;
+}
+
+.contact .contact-info {
+    flex: 1;
+}
+
+.contact .contact-actions {
+    display: flex;
+}
+
+/* ADD */
+.container span {
+    color: var(--green-010);
+}
+
+/* FORM */ 
+.form label {
+    color: var(--green-010);
+    font-weight: bold;
 }
