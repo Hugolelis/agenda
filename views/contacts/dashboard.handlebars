@@ -4,45 +4,48 @@
         <h1>Todos os contatos</h1>
         
         <div class="actions d-flex flex-column align-items-left mt-4">
-            <form action="" method="get" class="d-flex col-12">
-                <input type="text" class="form-control" placeholder="Pesquisar contato...">
-                <button type="submit" class="btn btn-success ms-1">
-                    <i class="bi bi-search"></i>
-                </button>
+            <form action="/" method="get" class="d-flex col-12">
+                <input type="text" name="search" class="form-control" value="{{search}}" placeholder="Pesquisar contato pelo nome...">
+                <button type="submit" class="btn btn-success ms-1"><i class="bi bi-search"></i></button>
             </form>
             <a href="/contacts/add" class="btn btn-success mt-4 col-3 col-md-2">Adicionar</a>
         </div>
     </div>
 
     <div class="dashboard mt-4 col-12 col-md-10 col-lg-12">
+
+        {{#if hasContact}}
         {{#each contact}}
-            <div class="contact col-12">
-                <div class="contact-info">
-                    <span>Nome: </span>
-                    <p>{{this.name}}</p>
-                </div>
+                <div class="contact col-12 mb-3 pb-3">
+                    <div class="contact-info">
+                        <span>Nome</span>
+                        <p>{{this.name}}</p>
+                    </div>
 
-                <div class="contact-info">
-                    <span>Email: </span>
-                    <p>{{this.email}}</p>
-                </div>
+                    <div class="contact-info">
+                        <span>Email</span>
+                        <p>{{this.email}}</p>
+                    </div>
 
-                <div class="contact-info">
-                    <span>Telefone: </span>
-                    <p>{{this.number}}</p>
-                </div>
+                    <div class="contact-info">
+                        <span>Telefone</span>
+                        <p>{{this.number}}</p>
+                    </div>
 
-                <div class="contact-actions">
-                    <a href="/contacts/edit/{{this.id}}" class="btn btn-primary">
-                        <i class="bi bi-pen-fill"></i>
-                    </a>
-                                
-                    <form action="/contacts/delete/{{this.id}}" method="post" class="ms-2">
-                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
-                    </form>
+                    <div class="contact-actions">
+                        <a href="/contacts/edit/{{this.id}}" class="btn btn-primary">
+                            <i class="bi bi-pen-fill"></i>
+                        </a>
+                                    
+                        <form action="/contacts/delete/{{this.id}}" method="post" class="ms-2">
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        {{/each}}
+            {{/each}}
+        {{else}}
+            <p class="alert">Nenhum contato encontrado, <a href="/contacts/add" class="ms-1">cadastre aqui!</a></p>
+        {{/if}}
     </div>
 </div>
 

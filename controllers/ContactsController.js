@@ -1,11 +1,18 @@
-import { where } from "sequelize"
 import { Contact } from "../models/Contact.js"
+import { Op } from "sequelize"
 
 export class ContactsController {
     static async showContacts(req, res) {
-        const contact = await Contact.findAll({raw: true})
+        let hasContact = true
 
-        res.render('contacts/dashboard', { contact })
+        let search = ''
+        if(req.query.search) search = req.query.search
+        
+        const contact = await Contact.findAll({raw: true, where: {name: {[Op.like]: `%${search}%`}}})
+        
+        if(contact.length === 0) hasContact = false
+        
+        res.render('contacts/dashboard', { contact, hasContact, search })
     }
 
     static async contactDelete(req, res) {

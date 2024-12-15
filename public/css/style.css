@@ -20,7 +20,8 @@ body {
 }
 
 a {
-    color: var(--white-010);
+    color: var(--green-010);
+    font-weight: bold;
 }
 
 h1 {
@@ -36,18 +37,35 @@ h1 {
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 4em;
 
     color: white;
     font-weight: bold;
+
+    border-bottom: 1px solid var(--green-010)
 }
 
 .contact .contact-info {
     flex: 1;
 }
 
+.contact .contact-info p {
+    margin-bottom: 0;
+}
+
 .contact .contact-actions {
     display: flex;
+}
+
+.alert {
+    color: var(--white-010);
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
 }
 
 /* ADD */
@@ -59,4 +77,16 @@ h1 {
 .form label {
     color: var(--green-010);
     font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .contact {
+        flex-direction: column;
+        
+        justify-content: left;
+        align-items: flex-start;
+        gap: 0.5em;
+        margin-bottom: 2em;
+    }
 }
